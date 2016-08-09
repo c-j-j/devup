@@ -1,0 +1,33 @@
+.card {
+  border: 1px solid $hairline;
+  background: white;
+  margin: 0 auto 2em auto;
+  text-align: center;
+  padding: 10%;
+  width: 95%;
+  img {
+    border-bottom: 1px solid $hairline;
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: $medium) {
+  .card {
+    @include span-columns(4);
+    @include omega(3n);
+    padding: 20px;
+    transition: all 0.15s;
+    img {
+      padding: 10%;
+    }
+    &:hover {
+      box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.05);
+      transform: scale(1.02);
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

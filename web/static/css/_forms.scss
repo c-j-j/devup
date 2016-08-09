@@ -1,0 +1,63 @@
+@mixin input-element($factor: 1) {
+  font-size: $font-size * $factor;
+  line-height: $line-height * $factor;
+  padding: 0.1em 0.7em;
+}
+
+input, textarea {
+  @include input-element();
+
+  background-color: white;
+  border: none;
+  box-shadow: inset 0 0 0 1px $light-graphite;
+  color: inherit;
+  resize: none;
+  width: 100%;
+}
+
+.checkbox {
+  width: initial;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 2px 1px $light-blue;
+  outline: none;
+}
+
+.form-group {
+  margin-bottom: $line-height;
+  margin-top: $line-height;
+}
+
+.button {
+  @include input-element();
+  @include transition(background-color 75ms ease-in-out);
+
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 300;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-align: center;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--primary {
+    background: $primary;
+
+    &:hover {
+      background: darken($primary, 5%);
+      cursor: hand;
+    }
+  }
+}
+
+a.button:hover {
+  text-decoration: none;
+}
