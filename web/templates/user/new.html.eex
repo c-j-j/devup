@@ -3,14 +3,24 @@
 <div class="module__example">
   <h1>New User</h1>
   <%= if @changeset.action do %>
-    <p>Sorry, that's not quite right. Please correct the errors below.</p>
+    <p class="error-box">Sorry, that's not quite right. Please correct the errors below.</p>
   <% end %>
   <section class="panel">
-    <%= text_input f, :username, placeholder: "Username" %>
-    <%= error_tag f, :username %>
-    <%= password_input f, :password, placeholder: "Password" %>
-    <%= error_tag f, :password %>
-    <%= submit "Create User", class: "button button--primary" %>
+    <div class="form-block">
+      <div class="form-group">
+        <%= text_input f, :username, placeholder: "Username" %>
+        <div class="error-text">
+          <%= error_tag f, :username %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= password_input f, :password, placeholder: "Password" %>
+        <div class="error-text">
+          <%= error_tag f, :password %>
+        </div>
+      </div>
+      <%= submit "Create User", class: "button button--primary" %>
+    </div>
   </section>
 </div>
 <% end %>

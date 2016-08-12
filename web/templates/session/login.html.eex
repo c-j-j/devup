@@ -1,0 +1,13 @@
+<h1>Login</h1>
+
+<div class="module__example">
+  <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
+  <div class="form-group">
+    <%= text_input f, :username, placeholder: "Username" %>
+  </div>
+  <div class="form-group">
+    <%= password_input f, :password, placeholder: "Password" %>
+  </div>
+  <%= submit "Log in", class: "button button--primary" %>
+<% end %>
+</div>

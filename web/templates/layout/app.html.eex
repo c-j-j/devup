@@ -14,7 +14,26 @@
   <body>
     <div class="container">
       <main role="main">
-        <nav>Nav bar</nav>
+        <nav>
+          Nav bar
+
+          <%= if @current_user do %>
+            <p>Your account.</p>
+            <%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %>
+          <% else  %>
+            <%= link "Register", to: user_path(@conn, :new) %>
+            <%= link "Log in", to: session_path(@conn, :new) %>
+          <% end %>
+        </nav>
+
+        <%= if get_flash(@conn, :error) do %>
+          <p class="error-box" role="alert"><%= get_flash(@conn, :error) %></p>
+        <% end %>
+
+        <%= if get_flash(@conn, :info) do %>
+          <p class="info-box"><%= get_flash(@conn, :info) %></p>
+        <% end %>
+
         <%= render @view_module, @view_template, assigns %>
       </main>
 

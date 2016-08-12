@@ -1,0 +1,23 @@
+.error-box {
+    background: lighten($error, 50%);
+    border: darken($error, 50%);
+    border-style: solid;
+    border-width: thin;
+    color: darken($error, 50%);
+    padding: 0.5em;
+    color: $error;
+}
+
+.info-box {
+    background: lighten(green, 50%);
+    border: darken(green, 50%);
+    border-style: solid;
+    border-width: thin;
+    color: darken(green, 50%);
+    padding: 0.5em;
+    color: green;
+}
+
+.error-text {
+  color: $error;
+}

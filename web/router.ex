@@ -7,6 +7,7 @@ defmodule Devup.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Devup.Auth, repo: Devup.Repo
   end
 
   pipeline :api do
@@ -21,6 +22,8 @@ defmodule Devup.Router do
     resources "/users", UserController, only: [:index, :show, :new, :create]
 
     resources "/subjects", SubjectController, only: [:index, :show]
+
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 
   # Other scopes may use custom stacks.
