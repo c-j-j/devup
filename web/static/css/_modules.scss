@@ -30,7 +30,7 @@
   }
 }
 
-.module__gallery {
+.module__example {
   background: $background-color;
   ul {
     margin: 0;
@@ -40,7 +40,7 @@
 
 
 @media screen and (min-width: 600px) {
-  .module__gallery {
+  .module__example {
     li {
       @include span-columns(3);
       @include omega(4n);

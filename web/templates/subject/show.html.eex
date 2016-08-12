@@ -1,0 +1,22 @@
+<h1><%= @subject.name %></h1>
+
+<div class="module__example">
+  <div class="content-wrap">
+    <section class="panel">
+      <p><%= @subject.description %></p>
+      <ul>
+        <%= for task <- @subject.tasks do %>
+          <li>
+            <input class="checkbox" type="checkbox"><%= task.description %>
+          </li>
+        <% end %>
+      </ul>
+
+      <input type="text" placeholder="Enter URL for your solution.">
+
+      <h3>40% of <%= @subject.name %> complete.</h3>
+
+      <a href="/subjects" class="button button--primary">Back to Data Structures and Algorithms</a>
+    </section>
+  </div>
+</div>

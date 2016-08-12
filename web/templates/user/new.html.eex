@@ -1,0 +1,16 @@
+
+<%= form_for @changeset, user_path(@conn, :create), fn f -> %>
+<div class="module__example">
+  <h1>New User</h1>
+  <%= if @changeset.action do %>
+    <p>Sorry, that's not quite right. Please correct the errors below.</p>
+  <% end %>
+  <section class="panel">
+    <%= text_input f, :username, placeholder: "Username" %>
+    <%= error_tag f, :username %>
+    <%= password_input f, :password, placeholder: "Password" %>
+    <%= error_tag f, :password %>
+    <%= submit "Create User", class: "button button--primary" %>
+  </section>
+</div>
+<% end %>

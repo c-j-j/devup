@@ -18,8 +18,9 @@ defmodule Devup.Router do
 
     get "/", PageController, :index
 
-    get "/items", ItemController, :index
-    get "/items/:id", ItemController, :show
+    resources "/users", UserController, only: [:index, :show, :new, :create]
+
+    resources "/subjects", SubjectController, only: [:index, :show]
   end
 
   # Other scopes may use custom stacks.
