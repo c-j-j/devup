@@ -11,7 +11,11 @@
 //
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
-import "phoenix_html"
+import "phoenix_html";
+
+$("p").click(function(){
+    alert("The paragraph was clicked.");
+});
 
 // Import local files
 //

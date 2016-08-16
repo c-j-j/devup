@@ -24,10 +24,14 @@ defmodule Devup.Router do
     resources "/subjects", SubjectController, only: [:index, :show]
 
     resources "/sessions", SessionController, only: [:new, :create, :delete]
+
+    post "/progress", ProgressController, :update
   end
 
   # Other scopes may use custom stacks.
   # scope "/api", Devup do
-  #   pipe_through :api
+    # pipe_through :api
+
+    # post "/progress", ProgressController, :complete_task
   # end
 end

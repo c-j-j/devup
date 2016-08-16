@@ -4,6 +4,7 @@ defmodule Devup.User do
   schema "users" do
     field :username, :string
     field :password, :string
+    has_many :completed_tasks, Devup.CompletedTask
 
     timestamps
   end

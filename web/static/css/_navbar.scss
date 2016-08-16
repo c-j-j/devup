@@ -1,6 +1,8 @@
 .navbar {
-  border-bottom: 1px solid;
-  padding: 10px 0;
+  Border-bottom: 1px solid;
+  padding: 10px 0px;
+  background-color: $black;
+  height: 45px;
 
   &__actions {
     padding-left: 0;
@@ -8,12 +10,31 @@
 
     &>li {
       display: inline-block;
-      padding-left: 10px;
 
       &:first-of-type {
         padding-left: 0;
       }
     }
   }
+}
+
+.navbar ul {
+  padding-left: 10px;
+}
+
+.navbar--right {
+  float: right; 
+  padding-right: 10px;
+}
+
+.navbar--left {
+  float: left; 
+}
+
+.navbar a {
+  color: $secondary; 
+  float: left;
+  display: inline-block;
+  font-size: 1.5em;
 }
 

@@ -14,16 +14,24 @@
   <body>
     <div class="container">
       <main role="main">
-        <nav>
-          Nav bar
-
+        <nav class="navbar">
+        <nav class="navbar--left">
+          <ul>
+            <li>
+              <%= link "Devup", to: page_path(@conn, :index) %>
+            </li>
+          </ul>
+        </nav>
+        <nav class="navbar--right">
+          <ul>
           <%= if @current_user do %>
-            <p>Your account.</p>
-            <%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %>
+            <li> <%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
           <% else  %>
-            <%= link "Register", to: user_path(@conn, :new) %>
-            <%= link "Log in", to: session_path(@conn, :new) %>
+            <li><%= link "Register", to: user_path(@conn, :new) %></li>
+            <li> <%= link "Log in", to: session_path(@conn, :new) %> </li>
           <% end %>
+          </ul>
+        </nav>
         </nav>
 
         <%= if get_flash(@conn, :error) do %>

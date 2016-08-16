@@ -5,7 +5,7 @@ exports.config = {
     },
     stylesheets: {
       joinTo: "css/app.css"
-    },
+    }
   },
 
   conventions: {

@@ -4,19 +4,28 @@
   <div class="content-wrap">
     <section class="panel">
       <p><%= @subject.description %></p>
-      <ul>
-        <%= for task <- @subject.tasks do %>
-          <li>
-            <input class="checkbox" type="checkbox"><%= task.description %>
-          </li>
-        <% end %>
-      </ul>
+      <%= form_for @conn, progress_path(@conn, :update), [as: :progress], fn f -> %>
+      <div class="form-group">
+        <ul>
+          <%= for task <- @subject.tasks do %>
+            <li>
+              <%= checkbox f, :task, name: task.id %><%= task.description %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
 
       <input type="text" placeholder="Enter URL for your solution.">
 
       <h3>40% of <%= @subject.name %> complete.</h3>
 
-      <a href="/subjects" class="button button--primary">Back to Data Structures and Algorithms</a>
+      <div class="form-group">
+        <%= submit "Save Progress", class: "button button--secondary" %>
+      </div>
+      <% end %>
+      <div class="form-group">
+        <a href="/subjects" class="button button--primary">Back to Data Structures and Algorithms</a>
+      </div>
     </section>
   </div>
 </div>
